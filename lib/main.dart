@@ -90,6 +90,18 @@ class CartItem extends StatelessWidget { //data cannot change
       children: [
         Text("$item"),//Display item ID and item name -it will call the toSting method
         Expanded(child: SizedBox()), //insert empty spaces
+        //Update the app state
+        Consumer<CartProvider>(
+          builder: (BuildContext context , CartProvider cart,Widget? child){
+            return TextButton(
+              onPressed: (){
+                cart.add(item);
+              },
+              child: Text("Add"),
+            );
+            },
+        ),
+
         TextButton(onPressed: (){},
         child:Text("Add")
         ),
