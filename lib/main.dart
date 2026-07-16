@@ -36,9 +36,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner : false,
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
@@ -65,6 +65,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        actions: [
+          IconButton(
+              onPressed: (){},
+              icon: Icon(Icons.shopping_cart),
+          ),
+        ],
       ),
       body: Center(
         child: ListView.separated(
